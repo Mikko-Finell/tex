@@ -1,0 +1,112 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage{mwe}
+%\usepackage[T1]{fontenc}
+\usepackage[finnish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{hyperref} % more powerful than {url}
+
+\author{Mikko Finell
+\\ \texttt{mikko.finell@edu.novia.fi}
+\and 
+Other Author
+\\ \texttt{other.author@edu.novia.fi}
+}
+
+\title{Frekvensanalys Inlämningsuppgift}
+\date{\today}
+
+\begin{document}
+
+% This creates a page without number, that has title, authors,
+% data, and table of contents
+\maketitle
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+\setcounter{page}{1}
+
+% Same as above, but table of contents has own, unnumbered page
+%\maketitle
+%\thispagestyle{empty}
+%\newpage
+%\thispagestyle{empty}
+%\tableofcontents
+%\newpage
+%\setcounter{page}{1}
+
+\section{The first section}
+åäö\footnote{This is obviously a footnote.}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.5]{figure_1}
+\end{figure}
+
+\captionof{figure}{This figure generated with matplotlib.}
+
+\section{Equations}
+% inline 
+We know that $\forall x \in X, \quad \exists y \leq \epsilon$. So we can prove that
+
+% free standing
+$$\lim\limits_{x \to \infty} \exp(-x) = 0$$
+$$\frac{\frac{1}{x}+\frac{1}{y}}{y-z}$$
+
+% numbered
+\begin{equation}
+\frac{
+    \begin{array}[b]{r}
+      \left( x_1 x_2 \right)\\
+      \times \left( x'_1 x'_2 \right)
+    \end{array}
+  }{
+    \left( y_1y_2y_3y_4 \right)
+  }
+\end{equation}
+
+\begin{equation}
+\sqrt[n]{1+x+x^2+x^3+\dots+x^n}
+\end{equation}
+
+\subsection*{Aligned equations}
+
+\begin{align*}
+    a_1 + b_1 &= c_1 \\
+    c_1 - b_1 &= a_1
+\end{align*}
+
+\begin{align*}
+    \sqrt{x}+\sqrt{y}&=\sqrt{z} & x^2+y^2&=z^2 \\
+    \frac{x}{y}&=z & x+y&=z
+\end{align*}
+
+\section{Tables}
+
+\begin{tabular}{|c|c|c|c|}
+\hline 1 & 2 & 3 & 4 \\
+\hline a & b & c & d \\
+\hline x & y & z & w \\
+\hline
+\end{tabular} 
+
+$
+\begin{matrix}
+    \text{some text} & \alpha& \beta^{*}\\
+    \gamma^{*} & \text{hello} & \delta
+\end{matrix}
+$
+
+\section{References}
+
+Random citation \cite{knuthwebsite} embeddeed in text. And here
+comes one more \cite{latexcompanion} citation. And finally, one
+last \cite{einstein} citation for good measure.
+
+% references
+\bibliography{test} 
+\bibliographystyle{unsrt}
+
+\end{document}
